@@ -1,513 +1,186 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="vi">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Đại học Văn Hiến (VHU) – Chọn ngành đúng, vững bước tương lai</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font "Be Vietnam Pro" & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#1c7ed6',
-                            sky: '#e7f4ff',
-                            skyLight: '#f3f9ff',
-                            orange: '#ff8a1f',
-                            sun: '#fff4d6',
-                            sunHover: '#ffe7a3',
-                            ink: '#1f2d3d',
-                            mut: '#5b6b7c',
-                            line: '#e3edf6'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Be Vietnam Pro"', 'sans-serif']
-                    },
-                    borderRadius: {
-                        '4xl': '2rem',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Be Vietnam Pro', sans-serif;
-            color: #1f2d3d;
-            background-color: #ffffff;
-        }
-        .hero-art-gradient {
-        background: linear-gradient(135deg, #d8eeff 0%, #ffffff 50%, #fff4d6 100%);
-        }
-        .soft-card-shadow {
-            box-shadow: 0 10px 30px -10px rgba(28, 126, 214, 0.08);
-        }
-        .btn-glow {
-            box-shadow: 0 8px 20px rgba(255, 138, 31, 0.35);
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Đại học Văn Hiến (VHU) – Chọn ngành đúng, vững bước tương lai</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--blue:#1c7ed6;--sky:#e7f4ff;--orange:#ff8a1f;--sun:#fff4d6;--ink:#1f2d3d;--mut:#5b6b7c;--line:#e3edf6;box-sizing:border-box}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.7 "Be Vietnam Pro","Segoe UI",Arial,sans-serif;padding-bottom:72px}
+a{color:inherit}
+.w{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:5}
+nav .w{display:flex;align-items:center;gap:20px;height:60px;overflow-x:auto;white-space:nowrap}
+nav b{color:var(--blue);font-size:18px;margin-right:auto}
+nav a{text-decoration:none;font-size:14px;font-weight:600}
+.btn{display:inline-block;background:var(--orange);color:#fff;padding:13px 28px;border:0;border-radius:999px;font:700 15px "Be Vietnam Pro",Arial,sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 6px 16px rgba(255,138,31,.3)}
+.btn.o{background:#fff;color:var(--blue);border:2px solid var(--blue);box-shadow:none}
+.banner{display:block;width:100%;height:clamp(150px,30vw,320px);object-fit:cover}
+.hero{background:linear-gradient(135deg,#d8eeff,#fff 55%,var(--sun));padding:56px 0}
+.hero .g2{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.pill{display:inline-block;background:#fff;color:var(--blue);border:1px solid var(--line);font-weight:700;font-size:13px;padding:4px 14px;border-radius:999px}
+h1{font-size:clamp(30px,5.5vw,48px);line-height:1.15;margin:14px 0}
+h1 span{color:var(--blue)}
+.hero p{color:var(--mut);font-size:17px;margin:0 0 22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 10px 30px -12px rgba(28,126,214,.18)}
+.card h3{margin:0 0 6px;font-size:19px}
+form{display:grid;gap:10px}
+input,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff;color:var(--ink)}
+#ok{display:none;font-weight:700;color:var(--blue)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-bottom:1px solid var(--line)}
+.stats div{padding:22px 10px;text-align:center}
+.stats b{display:block;font-size:32px;color:var(--blue)}
+.stats span{font-size:14px;color:var(--mut)}
+section{padding:56px 0}
+h2{font-size:clamp(24px,4vw,32px);margin:0 0 8px;text-align:center}
+.sub{text-align:center;color:var(--mut);max-width:660px;margin:0 auto 30px}
+.g{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.n{font-size:32px;font-weight:800;color:var(--orange);line-height:1}
+.c p,.card p{margin:0;color:var(--mut);font-size:15px}
+.sky{background:var(--sky)}
+.sun{background:var(--sun)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chips a{background:#fff;border:1px solid #cfe5f8;padding:9px 18px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none}
+.chips a.hl{background:var(--orange);border-color:var(--orange);color:#fff}
+.note{text-align:center;color:var(--mut);font-size:14px;margin-top:16px}
+.big{font-size:30px;font-weight:800;color:var(--blue);line-height:1.2;margin-bottom:6px}
+.list{list-style:none;margin:0;padding:0}
+.list li{position:relative;padding:12px 16px 12px 44px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.list li:before{content:"";position:absolute;left:16px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--orange)}
+.ct{text-align:center}
+.tel{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 16px;display:flex;gap:10px;justify-content:center;z-index:9}
+.tel .btn{padding:10px 22px;font-size:14px}
+footer{padding:28px 0;text-align:center;font-size:14px;color:var(--mut);border-top:1px solid var(--line)}
+footer p{margin:4px 0}
+@media(max-width:760px){.hero .g2{grid-template-columns:1fr}}
+</style>
 </head>
-<body class="antialiased selection:bg-brand-sky selection:text-brand-blue">
+<body>
 
-    <!-- Mobile Floating Bar -->
-    <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-brand-line p-3 md:hidden flex items-center justify-between px-6 shadow-2xl">
-        <a href="tel:18001568" class="flex items-center space-x-2 text-brand-blue font-bold text-xs bg-brand-sky px-4 py-2.5 rounded-full">
-            <i class="fa-solid fa-phone text-brand-orange"></i>
-            <span>1800 1568</span>
-        </a>
-        <a href="#dang-ky" class="bg-brand-orange text-white font-bold text-xs px-6 py-2.5 rounded-full btn-glow">
-            <i class="fa-solid fa-paper-plane mr-1.5"></i>Tư Vấn Ngay
-        </a>
-    </div>
+<nav><div class="w"><b>VHU</b><a href="#vi-sao">Vì sao chọn VHU</a><a href="#nganh">Ngành học</a><a href="#hoc-bong">Học bổng</a><a href="#doi-song">Đời sống sinh viên</a><a href="#phu-huynh">Phụ huynh</a></div></nav>
 
-    <!-- Navigation Header -->
-    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brand-line transition-all">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 sm:h-20">
-                <!-- Logo & Brand Name -->
-                <a href="#" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 sm:w-11 sm:h-11 bg-brand-blue text-white rounded-2xl flex items-center justify-center font-extrabold text-lg sm:text-xl shadow-md group-hover:scale-105 transition-transform">
-                        VHU
-                    </div>
-                    <div>
-                        <span class="text-lg sm:text-xl font-bold text-brand-blue block leading-none tracking-tight">Đại học Văn Hiến</span>
-                        <span class="text-[11px] text-brand-mut font-medium tracking-wide">Thành nhân trước khi thành danh</span>
-                    </div>
-                </a>
+<img class="banner" src="banner.jpg" alt="Đại học Văn Hiến – Vững bước tương lai" onerror="this.style.display='none'">
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-7 text-sm font-semibold text-brand-ink">
-                    <a href="#vi-sao" class="hover:text-brand-blue transition">Vì sao chọn VHU</a>
-                    <a href="#nganh" class="hover:text-brand-blue transition">Ngành học</a>
-                    <a href="#hoc-bong" class="hover:text-brand-blue transition">Học bổng & học phí</a>
-                    <a href="#phu-huynh" class="hover:text-brand-blue transition">Dành cho phụ huynh</a>
-                </div>
+<div class="hero"><div class="w g2">
+<div>
+<span class="pill">Tuyển sinh đại học chính quy</span>
+<h1>Chọn ngành đúng,<br><span>vững bước tương lai</span></h1>
+<p>Trường Đại học Văn Hiến (VHU) đồng hành cùng học sinh và phụ huynh trên hành trình chọn ngành, chọn trường và xây dựng nghề nghiệp.</p>
+<div class="cta"><a class="btn" href="#dang-ky">Nhận tư vấn miễn phí</a><a class="btn o" href="#nganh">Khám phá ngành học</a></div>
+</div>
+<div class="card" id="dang-ky">
+<h3>Đăng ký tư vấn tuyển sinh</h3>
+<p style="margin-bottom:14px">Để lại thông tin, tư vấn viên sẽ liên hệ ba mẹ và con.</p>
+<form id="f">
+<input required placeholder="Họ và tên">
+<input required type="tel" placeholder="Số điện thoại">
+<select><option>Bạn là học sinh</option><option>Bạn là phụ huynh</option></select>
+<select><option>Ngành quan tâm</option><option>Du lịch</option><option>Quản trị nhà hàng và dịch vụ ăn uống</option><option>Công nghệ thông tin</option><option>Luật kinh tế</option><option>Dược học</option><option>Ngành khác</option></select>
+<button class="btn" type="submit">Gửi đăng ký</button>
+<div id="ok">Cảm ơn bạn! VHU sẽ liên hệ tư vấn sớm.</div>
+</form>
+</div>
+</div></div>
 
-                <!-- CTA Button -->
-                <div class="hidden md:block">
-                    <a href="#dang-ky" class="bg-brand-orange hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-full text-sm btn-glow transition duration-300 transform hover:-translate-y-0.5 inline-block">
-                        <i class="fa-solid fa-paper-plane mr-2"></i>Xét tuyển ngay
-                    </a>
-                </div>
+<div class="stats w">
+<div><b>1997</b><span>Năm thành lập</span></div>
+<div><b>43</b><span>Ngành đào tạo đại học</span></div>
+<div><b>9</b><span>Khoa chuyên môn</span></div>
+<div><b>TP.HCM</b><span>Nhiều cơ sở đào tạo</span></div>
+</div>
 
-                <!-- Mobile Navigation Toggle -->
-                <button id="menuBtn" class="md:hidden p-2 text-brand-ink hover:text-brand-blue focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
+<section id="vi-sao"><div class="w">
+<h2>Vì sao chọn Đại học Văn Hiến?</h2>
+<p class="sub">Chọn trường là bước quan trọng trên hành trình xây dựng tương lai. Đây là những điều học sinh và phụ huynh có thể tìm hiểu tại VHU.</p>
+<div class="g">
+<div class="card c"><div class="n">01</div><h3>Nhiều ngành để lựa chọn</h3><p>43 ngành đào tạo đại học, từ Du lịch, Công nghệ thông tin, Luật kinh tế đến Dược học và Nghệ thuật.</p></div>
+<div class="card c"><div class="n">02</div><h3>Học bổng đa dạng</h3><p>Nhiều học bổng theo điểm xét tuyển, tài năng và chứng chỉ ngoại ngữ, giảm áp lực tài chính cho gia đình.</p></div>
+<div class="card c"><div class="n">03</div><h3>Gắn với doanh nghiệp</h3><p>Sinh viên được giới thiệu việc làm bán thời gian, thực tập và tham gia các hoạt động hướng nghiệp cùng doanh nghiệp.</p></div>
+</div></div></section>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-brand-line px-6 pt-3 pb-6 space-y-3">
-            <a href="#vi-sao" class="block text-brand-ink font-semibold py-1.5 border-b border-gray-100">Vì sao chọn VHU</a>
-            <a href="#nganh" class="block text-brand-ink font-semibold py-1.5 border-b border-gray-100">Ngành học</a>
-            <a href="#hoc-bong" class="block text-brand-ink font-semibold py-1.5 border-b border-gray-100">Học bổng & học phí</a>
-            <a href="#phu-huynh" class="block text-brand-ink font-semibold py-1.5 border-b border-gray-100">Dành cho phụ huynh</a>
-            <a href="#dang-ky" class="block w-full text-center bg-brand-orange text-white font-bold py-3 rounded-full mt-3 btn-glow">Đăng ký tư vấn</a>
-        </div>
-    </nav>
+<section id="nganh" class="sky"><div class="w">
+<h2>Khám phá ngành học – Mở lối tương lai</h2>
+<p class="sub">Chưa biết chọn ngành nào? Hãy bắt đầu từ sở thích, năng lực và lĩnh vực bạn yêu thích.</p>
+<div class="chips">
+<a class="hl" href="https://dl.vhu.edu.vn/" target="_blank" rel="noopener">Du lịch</a>
+<a href="https://tuyensinh.vhu.edu.vn/" target="_blank" rel="noopener">Quản trị nhà hàng và dịch vụ ăn uống</a>
+<a href="https://cntt.vhu.edu.vn/" target="_blank" rel="noopener">Công nghệ thông tin</a>
+<a href="https://tuyensinh.vhu.edu.vn/" target="_blank" rel="noopener">Mạng máy tính và truyền thông</a>
+<a href="https://tuyensinh.vhu.edu.vn/" target="_blank" rel="noopener">Luật kinh tế</a>
+<a href="https://yd.vhu.edu.vn/" target="_blank" rel="noopener">Dược học</a>
+<a href="https://nt.vhu.edu.vn/" target="_blank" rel="noopener">Đạo diễn điện ảnh – truyền hình</a>
+<a href="https://dph.vhu.edu.vn/" target="_blank" rel="noopener">Trung Quốc học</a>
+<a href="https://kttc.vhu.edu.vn/" target="_blank" rel="noopener">Kiểm toán</a>
+</div>
+<p class="note">Một số ngành tiêu biểu trong 43 ngành. Xem đầy đủ tại tuyensinh.vhu.edu.vn.</p>
+</div></section>
 
-    <!-- Hero Section -->
-    </nav>
+<section><div class="w"><div class="g" style="align-items:center">
+<div>
+<span class="pill" style="background:var(--sun);border-color:var(--sun);color:#b25e00">Ngành nổi bật</span>
+<h2 style="text-align:left;margin-top:12px">Du lịch: khám phá thế giới, trải nghiệm tương lai</h2>
+<p style="color:var(--mut)">Bạn thích đi đây đó, tìm hiểu văn hóa và giao tiếp với nhiều người? Ngành Du lịch giúp phát triển kỹ năng tổ chức, giao tiếp và phục vụ khách hàng, mở ra cơ hội trong lĩnh vực du lịch và dịch vụ.</p>
+<p style="margin-top:18px"><a class="btn" href="https://dl.vhu.edu.vn/" target="_blank" rel="noopener">Xem Khoa Du lịch</a></p>
+</div>
+<div class="card" style="background:var(--sky);border-color:#cfe5f8">
+<h3>Ngành này hợp với bạn nếu</h3>
+<ul class="list" style="margin-top:12px">
+<li>Thích khám phá và trải nghiệm</li>
+<li>Năng động, thích gặp gỡ mọi người</li>
+<li>Quan tâm văn hóa và ngoại ngữ</li>
+</ul></div>
+</div></div></section>
 
-    <img src="banner.jpg" alt="Đại học Văn Hiến - Vững bước tương lai" class="w-full h-40 sm:h-64 lg:h-80 object-cover block">
+<section id="hoc-bong" class="sun"><div class="w">
+<h2>Học bổng và hỗ trợ tài chính</h2>
+<p class="sub">Một số học bổng VHU công bố trong mùa tuyển sinh đại học 2026. Điều kiện cụ thể và thời gian áp dụng xem trong thông báo chính thức của trường.</p>
+<div class="g">
+<div class="card"><div class="big">20% – 80%</div><h3>Học bổng Tinh hoa Văn Hiến</h3><p>Giá trị trên học phí toàn khóa, dành cho thí sinh chọn VHU là nguyện vọng 1 và có điểm trúng tuyển cao.</p></div>
+<div class="card"><div class="big">Đến 100%</div><h3>Học bổng Tài năng</h3><p>Học phí toàn khóa, dành cho thủ khoa, á khoa của trường và thủ khoa các ngành đào tạo.</p></div>
+<div class="card"><div class="big">Đến 100%</div><h3>Học bổng Công dân Toàn cầu</h3><p>Học phí năm nhất, dành cho thí sinh có IELTS 6.5 hoặc chứng chỉ ngoại ngữ tương đương.</p></div>
+</div>
+<p class="note">Ngoài ra, VHU có chính sách hỗ trợ sinh viên nhập học chỉ cần đóng trước 30% học phí học kỳ 1.</p>
+<div class="ct" style="margin-top:22px"><a class="btn" href="https://tuyensinh.vhu.edu.vn/" target="_blank" rel="noopener">Xem chính sách tuyển sinh</a></div>
+</div></section>
 
-    <section class="hero-art-gradient relative py-12 lg:py-20 overflow-hidden border-b border-brand-line">
-        <!-- Floating Artistic Decorative Elements -->
-        <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-brand-blue/10 blur-3xl pointer-events-none"></div>
-        <div class="absolute right-1/4 -bottom-20 w-64 h-64 rounded-full bg-brand-orange/10 blur-2xl pointer-events-none"></div>
+<section id="doi-song"><div class="w">
+<h2>Đời sống sinh viên năng động</h2>
+<p class="sub">Một vài hoạt động nổi bật của sinh viên VHU trong năm 2026.</p>
+<div class="g">
+<div class="card c"><h3>Career Launchpad 2026</h3><p>Chương trình trang bị hành trang để sinh viên tự tin chinh phục nhà tuyển dụng trong thời đại AI.</p></div>
+<div class="card c"><h3>VHU Run 2026 – Sync for Change</h3><p>Hoạt động chạy bộ cộng đồng tổ chức tại HungHau Campus.</p></div>
+<div class="card c"><h3>Cuộc thi tài năng ngoại ngữ</h3><p>Các cuộc thi tiếng Anh, tiếng Nhật, Hán ngữ mở rộng giúp sinh viên rèn bản lĩnh và kỹ năng thuyết trình.</p></div>
+</div></div></section>
 
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                
-                <!-- Hero Copy -->
-                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-                    <span class="inline-block bg-white text-brand-blue border border-brand-line font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-sm">
-                        ✨ Tuyển sinh Đại học Chính quy 2026
-                    </span>
-                    <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-brand-ink">
-                        Chọn ngành đúng,<br>
-                        <span class="text-brand-blue">vững bước tương lai</span>
-                    </h1>
-                    <p class="text-base sm:text-lg text-brand-mut leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
-                        Trường Đại học Văn Hiến (VHU) đồng hành cùng học sinh và phụ huynh trên hành trình chọn ngành, chọn trường và xây dựng sự nghiệp bền vững tại HungHau Campus hiện đại.
-                    </p>
+<section id="phu-huynh" class="sky"><div class="w" style="max-width:620px">
+<h2>Đồng hành cùng con – Vững bước tương lai</h2>
+<p class="sub">Chọn trường là quyết định quan trọng của cả gia đình. Ba mẹ nên cùng con tìm hiểu:</p>
+<ul class="list">
+<li>Ngành học và chương trình đào tạo</li>
+<li>Môi trường học tập và hoạt động sinh viên</li>
+<li>Học phí và chính sách học bổng</li>
+<li>Cơ hội thực tập và nghề nghiệp sau khi tốt nghiệp</li>
+</ul>
+<div class="ct" style="margin-top:22px"><a class="btn" href="https://tuyensinh.vhu.edu.vn/" target="_blank" rel="noopener">Tìm hiểu tuyển sinh</a></div>
+</div></section>
 
-                    <!-- Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-                        <a href="#dang-ky" class="w-full sm:w-auto text-center bg-brand-orange hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded-full text-sm btn-glow transition duration-300 transform hover:-translate-y-0.5">
-                            Nộp hồ sơ xét tuyển
-                        </a>
-                        <a href="#nganh" class="w-full sm:w-auto text-center bg-white hover:bg-brand-skyLight text-brand-blue border-2 border-brand-blue font-bold px-7 py-3.5 rounded-full text-sm transition duration-300">
-                            Khám phá ngành học
-                        </a>
-                    </div>
-                </div>
+<footer><div class="w">
+<p><b>Trường Đại học Văn Hiến (VHU)</b></p>
+<p>HungHau Campus: Khu chức năng 13E, Đại lộ Nguyễn Văn Linh, xã Bình Hưng, TP. Hồ Chí Minh</p>
+<p>Harmony Campus: 624 Âu Cơ, phường Bảy Hiền · myU Campus: 665–667–669 Điện Biên Phủ, phường Bàn Cờ</p>
+<p>Hotline miễn cước: 1800 1568 · Email: info@vhu.edu.vn · <a href="https://vhu.edu.vn" target="_blank" rel="noopener">vhu.edu.vn</a></p>
+<p style="font-size:12px;margin-top:10px">Trang minh họa cho bài thực hành marketing online. Thông tin tham khảo từ website vhu.edu.vn.</p>
+</div></footer>
 
-                <!-- Registration Quick Form Card -->
-                <div id="dang-ky" class="lg:col-span-6">
-                    <div class="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-8 soft-card-shadow border border-brand-line">
-                        <div class="flex items-center space-x-2 mb-2">
-                            <span class="w-3 h-3 rounded-full bg-brand-orange inline-block"></span>
-                            <h3 class="text-xl font-bold text-brand-ink">Tư vấn xét tuyển nhanh</h3>
-                        </div>
-                        <p class="text-xs text-brand-mut mb-6">Điền thông tin để nhận tư vấn ngành học & cơ hội học bổng VHU 2026</p>
+<div class="tel"><a class="btn o" href="tel:18001568">Gọi 1800 1568</a><a class="btn" href="#dang-ky">Tư vấn ngay</a></div>
 
-                        <form id="leadForm" class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold text-brand-ink uppercase tracking-wider mb-1">Họ và tên *</label>
-                                <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-brand-line focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none text-sm bg-brand-skyLight/50">
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <div>
-                                    <label class="block text-xs font-bold text-brand-ink uppercase tracking-wider mb-1">Số điện thoại *</label>
-                                    <input type="tel" required placeholder="0901234567" class="w-full px-4 py-3 rounded-xl border border-brand-line focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none text-sm bg-brand-skyLight/50">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-brand-ink uppercase tracking-wider mb-1">Bạn là</label>
-                                    <select class="w-full px-4 py-3 rounded-xl border border-brand-line focus:ring-2 focus:ring-brand-blue outline-none text-sm bg-white">
-                                        <option>Học sinh lớp 12</option>
-                                        <option>Phụ huynh</option>
-                                        <option>Thí sinh tự do</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-brand-ink uppercase tracking-wider mb-1">Ngành học quan tâm</label>
-                                <select class="w-full px-4 py-3 rounded-xl border border-brand-line focus:ring-2 focus:ring-brand-blue outline-none text-sm bg-white">
-                                    <option>Du lịch - Dịch vụ</option>
-                                    <option>Công nghệ thông tin</option>
-                                    <option>Quản trị kinh doanh</option>
-                                    <option>Truyền thông - PR</option>
-                                    <option>Ngôn ngữ (Anh/Hàn/Nhật/Trung)</option>
-                                    <option>Ngành khác...</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="w-full bg-brand-orange hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl text-sm btn-glow transition duration-300">
-                                Gửi yêu cầu tư vấn
-                            </button>
-                        </form>
-                        
-                        <div id="formSuccess" class="hidden text-center py-6 text-emerald-600 space-y-2">
-                            <i class="fa-solid fa-circle-check text-4xl text-emerald-500"></i>
-                            <p class="font-bold">Đã gửi đăng ký thành công!</p>
-                            <p class="text-xs text-brand-mut">Chuyên viên tư vấn VHU sẽ liên hệ hỗ trợ bạn trong thời gian sớm nhất.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Statistics Bar -->
-    <div class="bg-white border-b border-brand-line py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 sm:divide-x divide-brand-line">
-                <div class="p-2">
-                    <b class="block text-3xl sm:text-4xl font-extrabold text-brand-blue">1997</b>
-                    <span class="text-xs sm:text-sm text-brand-mut font-medium">Năm thành lập</span>
-                </div>
-                <div class="p-2">
-                    <b class="block text-3xl sm:text-4xl font-extrabold text-brand-blue">43+</b>
-                    <span class="text-xs sm:text-sm text-brand-mut font-medium">Ngành đào tạo</span>
-                </div>
-                <div class="p-2">
-                    <b class="block text-3xl sm:text-4xl font-extrabold text-brand-blue">5</b>
-                    <span class="text-xs sm:text-sm text-brand-mut font-medium">Phương thức xét tuyển</span>
-                </div>
-                <div class="p-2">
-                    <b class="block text-3xl sm:text-4xl font-extrabold text-brand-orange">TP.HCM</b>
-                    <span class="text-xs sm:text-sm text-brand-mut font-medium">Trường đại học uy tín</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 1: Why VHU? -->
-    <section id="vi-sao" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <h2 class="text-2xl sm:text-4xl font-bold text-brand-ink mb-3">Vì sao chọn Đại học Văn Hiến?</h2>
-                <p class="text-brand-mut text-sm sm:text-base leading-relaxed">
-                    Chọn trường là bước quan trọng trên hành trình xây dựng tương lai. Đây là những giá trị nổi bật sinh viên và phụ huynh nhận được tại VHU.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white border border-brand-line rounded-3xl p-8 hover:border-brand-blue transition duration-300 soft-card-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="text-4xl font-extrabold text-brand-orange mb-4">01</div>
-                        <h3 class="text-xl font-bold text-brand-ink mb-2">Nhiều ngành để lựa chọn</h3>
-                        <p class="text-brand-mut text-sm leading-relaxed">
-                            43 ngành học theo định hướng ứng dụng, cập nhật liên tục theo xu hướng phát triển kinh tế – xã hội và hội nhập quốc tế.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white border border-brand-line rounded-3xl p-8 hover:border-brand-blue transition duration-300 soft-card-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="text-4xl font-extrabold text-brand-orange mb-4">02</div>
-                        <h3 class="text-xl font-bold text-brand-ink mb-2">Học đi đôi với thực hành</h3>
-                        <p class="text-brand-mut text-sm leading-relaxed">
-                            Chú trọng thời lượng thực hành thực tế. Sinh viên được kết nối thực tập và giới thiệu việc làm bán thời gian ngay trong quá trình học.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white border border-brand-line rounded-3xl p-8 hover:border-brand-blue transition duration-300 soft-card-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="text-4xl font-extrabold text-brand-orange mb-4">03</div>
-                        <h3 class="text-xl font-bold text-brand-ink mb-2">Xét tuyển linh hoạt</h3>
-                        <p class="text-brand-mut text-sm leading-relaxed">
-                            Lựa chọn xét điểm thi tốt nghiệp THPT, học bạ, đánh giá năng lực ĐHQG-HCM, xét kết hợp hoặc xét tuyển thẳng nhanh chóng.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 2: Major Exploration (Sky Blue background) -->
-    <section id="nganh" class="py-20 bg-brand-sky border-y border-brand-line">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-2xl sm:text-4xl font-bold text-brand-ink mb-3">Khám phá ngành học – Mở lối tương lai</h2>
-                <p class="text-brand-mut text-sm sm:text-base">
-                    Chưa biết chọn ngành nào? Hãy bắt đầu từ sở thích, năng lực và lĩnh vực bạn đam mê.
-                </p>
-            </div>
-
-            <!-- Major Filter Chips -->
-            <div class="flex flex-wrap gap-2.5 justify-center max-w-3xl mx-auto mb-8">
-                <span class="bg-brand-orange text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-sm">Du lịch & dịch vụ</span>
-                <span class="bg-white border border-blue-200 text-brand-ink px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:border-brand-blue transition">Quản trị nhà hàng</span>
-                <span class="bg-white border border-blue-200 text-brand-ink px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:border-brand-blue transition">Công nghệ thông tin</span>
-                <span class="bg-white border border-blue-200 text-brand-ink px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:border-brand-blue transition">Truyền thông & PR</span>
-                <span class="bg-white border border-blue-200 text-brand-ink px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:border-brand-blue transition">Quản trị kinh doanh</span>
-                <span class="bg-white border border-blue-200 text-brand-ink px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:border-brand-blue transition">Luật kinh tế</span>
-                <span class="bg-white border border-blue-200 text-brand-ink px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:border-brand-blue transition">Tâm lý học</span>
-                <span class="bg-white border border-blue-200 text-brand-ink px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:border-brand-blue transition">Ngôn ngữ Anh</span>
-                <span class="bg-white border border-blue-200 text-brand-ink px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:border-brand-blue transition">Piano / Thanh nhạc</span>
-            </div>
-
-            <p class="text-center text-xs sm:text-sm text-brand-mut mb-12">
-                * Đây là một số ngành tiêu biểu trong tổng số <strong class="text-brand-blue">43 ngành đào tạo</strong> chính quy tại VHU.
-            </p>
-
-            <!-- Major Spotlight Card -->
-            <div class="bg-white rounded-3xl border border-brand-line p-8 sm:p-10 soft-card-shadow grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7 space-y-4">
-                    <span class="inline-block bg-brand-sun text-amber-800 font-bold text-xs px-3.5 py-1 rounded-full border border-amber-200">
-                        ⭐ Ngành nổi bật được yêu thích
-                    </span>
-                    <h3 class="text-2xl sm:text-3xl font-bold text-brand-ink leading-tight">
-                        Du lịch: Khám phá thế giới, trải nghiệm tương lai
-                    </h3>
-                    <p class="text-brand-mut text-sm sm:text-base leading-relaxed">
-                        Bạn thích đi đây đó, tìm hiểu văn hóa và giao tiếp với nhiều người? Ngành Du lịch giúp phát triển kỹ năng tổ chức, quản lý dịch vụ và giao tiếp đa văn hóa, mở ra cơ hội làm việc rộng mở.
-                    </p>
-                </div>
-
-                <div class="lg:col-span-5 bg-brand-skyLight border border-blue-100 rounded-2xl p-6">
-                    <h4 class="font-bold text-brand-ink text-base mb-3">Ngành này hợp với bạn nếu:</h4>
-                    <ul class="space-y-3 text-xs sm:text-sm text-brand-mut">
-                        <li class="flex items-center space-x-3">
-                            <span class="w-3 h-3 rounded-full bg-brand-orange flex-shrink-0"></span>
-                            <span>Thích khám phá và trải nghiệm thực tế</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <span class="w-3 h-3 rounded-full bg-brand-orange flex-shrink-0"></span>
-                            <span>Năng động, thích kết nối mọi người</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <span class="w-3 h-3 rounded-full bg-brand-orange flex-shrink-0"></span>
-                            <span>Quan tâm đến văn hóa và ngoại ngữ</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Section: Tuition & Scholarship Calculator (Pastel Sun Background) -->
-    <section id="hoc-bong" class="py-20 bg-brand-sun border-b border-brand-line">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="inline-block bg-white text-brand-blue border border-amber-200 font-bold text-xs px-4 py-1.5 rounded-full mb-3">
-                    💰 Ước tính tài chính
-                </span>
-                <h2 class="text-2xl sm:text-4xl font-bold text-brand-ink mb-3">Học bổng và hỗ trợ sinh viên</h2>
-                <p class="text-brand-mut text-sm sm:text-base leading-relaxed">
-                    VHU áp dụng chính sách <strong class="text-brand-ink">giữ nguyên học phí toàn khóa</strong> cùng nhiều quỹ học bổng khuyến học giá trị hằng năm.
-                </p>
-            </div>
-
-            <!-- Calculator Tool Panel -->
-            <div class="max-w-xl mx-auto bg-white rounded-3xl p-6 sm:p-8 soft-card-shadow border border-amber-200">
-                <h3 class="text-lg font-bold text-brand-ink mb-4 text-center">Công cụ ước tính học bổng học bạ 2026</h3>
-
-                <div class="space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold text-brand-ink uppercase tracking-wider mb-2">Chọn khối ngành đào tạo:</label>
-                        <select id="calcMajor" class="w-full px-4 py-3 rounded-xl border border-brand-line text-sm font-medium bg-brand-skyLight/30 outline-none focus:ring-2 focus:ring-brand-blue">
-                            <option value="12000000">Khối ngành Kinh tế / Quản trị (~ 12.0 Trđ / học kỳ)</option>
-                            <option value="13500000">Khối ngành Công nghệ thông tin (~ 13.5 Trđ / học kỳ)</option>
-                            <option value="11500000">Khối ngành Ngôn ngữ & Xã hội (~ 11.5 Trđ / học kỳ)</option>
-                            <option value="14000000">Khối ngành Du lịch & Khách sạn (~ 14.0 Trđ / học kỳ)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between items-center mb-1">
-                            <label class="text-xs font-bold text-brand-ink uppercase tracking-wider">Điểm trung bình học bạ lớp 12:</label>
-                            <span id="scoreVal" class="text-brand-orange font-bold text-base">7.5 điểm</span>
-                        </div>
-                        <input type="range" id="scoreRange" min="5.0" max="10.0" step="0.1" value="7.5" class="w-full accent-brand-orange cursor-pointer">
-                    </div>
-
-                    <!-- Calculation Results -->
-                    <div class="bg-brand-skyLight/80 rounded-2xl p-4 border border-blue-100 space-y-2 text-sm">
-                        <div class="flex justify-between text-brand-mut">
-                            <span>Học phí tiêu chuẩn / học kỳ:</span>
-                            <span id="baseFee" class="font-bold text-brand-ink">12,000,000 VNĐ</span>
-                        </div>
-                        <div class="flex justify-between text-brand-orange">
-                            <span>Mức học bổng ưu đãi:</span>
-                            <span id="scholarshipVal" class="font-bold">10%</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-blue-100 text-base font-extrabold text-brand-blue">
-                            <span>Học phí dự kiến còn lại:</span>
-                            <span id="finalFee" class="text-lg">10,800,000 VNĐ</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center pt-2">
-                        <a href="#dang-ky" class="inline-block bg-brand-orange hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full text-xs sm:text-sm btn-glow transition">
-                            Đăng ký giữ suất học bổng
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Parent Companion Section -->
-    <section id="phu-huynh" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl sm:text-4xl font-bold text-brand-ink mb-3">
-                Đồng hành cùng con – Vững bước tương lai
-            </h2>
-            <p class="text-brand-mut text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed">
-                Chọn trường đại học là quyết định quan trọng của cả gia đình. Ba mẹ nên cùng con tìm hiểu kỹ lưỡng các tiêu chí:
-            </p>
-
-            <ul class="max-w-md mx-auto space-y-3 text-left mb-10">
-                <li class="flex items-center space-x-4 bg-brand-skyLight p-4 rounded-2xl border border-brand-line">
-                    <div class="w-3 h-3 rounded-full bg-brand-orange flex-shrink-0"></div>
-                    <span class="text-sm font-semibold text-brand-ink">Ngành học phù hợp năng lực & chương trình chuẩn</span>
-                </li>
-                <li class="flex items-center space-x-4 bg-brand-skyLight p-4 rounded-2xl border border-brand-line">
-                    <div class="w-3 h-3 rounded-full bg-brand-orange flex-shrink-0"></div>
-                    <span class="text-sm font-semibold text-brand-ink">Môi trường học tập an toàn, năng động</span>
-                </li>
-                <li class="flex items-center space-x-4 bg-brand-skyLight p-4 rounded-2xl border border-brand-line">
-                    <div class="w-3 h-3 rounded-full bg-brand-orange flex-shrink-0"></div>
-                    <span class="text-sm font-semibold text-brand-ink">Học phí minh bạch, không tăng toàn khóa</span>
-                </li>
-                <li class="flex items-center space-x-4 bg-brand-skyLight p-4 rounded-2xl border border-brand-line">
-                    <div class="w-3 h-3 rounded-full bg-brand-orange flex-shrink-0"></div>
-                    <span class="text-sm font-semibold text-brand-ink">Cơ hội thực tập & việc làm đầu ra rõ ràng</span>
-                </li>
-            </ul>
-
-            <a href="https://tuyensinh.vhu.edu.vn/" target="_blank" rel="noopener" class="inline-block bg-brand-blue hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-full text-sm shadow-md transition duration-300">
-                <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Xem chi tiết tuyển sinh VHU
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-brand-line py-8 text-center text-xs sm:text-sm text-brand-mut">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
-            <p class="font-bold text-brand-ink">Trường Đại học Văn Hiến (VHU)</p>
-            <p>Trung tâm Tư vấn tuyển sinh: 624 Âu Cơ, Phường 10, Quận Tân Bình, TP.HCM</p>
-            <p class="text-brand-mut/70 text-[11px] pt-2">© Trang minh họa Landing Page dành cho bài tập thực hành Marketing Online.</p>
-        </div>
-    </footer>
-
-    <!-- Interactive JavaScript -->
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Form submission behavior
-        const leadForm = document.getElementById('leadForm');
-        const formSuccess = document.getElementById('formSuccess');
-
-        leadForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            leadForm.classList.add('hidden');
-            formSuccess.classList.remove('hidden');
-        });
-
-        // Interactive Tuition & Scholarship Calculator Logic
-        const calcMajor = document.getElementById('calcMajor');
-        const scoreRange = document.getElementById('scoreRange');
-        const scoreVal = document.getElementById('scoreVal');
-        const baseFee = document.getElementById('baseFee');
-        const scholarshipVal = document.getElementById('scholarshipVal');
-        const finalFee = document.getElementById('finalFee');
-
-        function updateCalculator() {
-            const base = parseInt(calcMajor.value);
-            const score = parseFloat(scoreRange.value);
-            scoreVal.textContent = score.toFixed(1) + ' điểm';
-
-            let scholarshipPercent = 0;
-            if (score >= 9.0) {
-                scholarshipPercent = 50;
-            } else if (score >= 8.0) {
-                scholarshipPercent = 20;
-            } else if (score >= 7.0) {
-                scholarshipPercent = 10;
-            } else {
-                scholarshipPercent = 0;
-            }
-
-            const discount = (base * scholarshipPercent) / 100;
-            const final = base - discount;
-
-            baseFee.textContent = base.toLocaleString('vi-VN') + ' VNĐ';
-            scholarshipVal.textContent = scholarshipPercent + '%';
-            finalFee.textContent = final.toLocaleString('vi-VN') + ' VNĐ';
-        }
-
-        calcMajor.addEventListener('change', updateCalculator);
-        scoreRange.addEventListener('input', updateCalculator);
-
-        // Initial trigger
-        updateCalculator();
-    </script>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').style.display='block';e.target.reset();});
+</script>
 </body>
 </html>
