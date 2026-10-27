@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <title>Đại học Văn Hiến (VHU) – Chọn ngành đúng, vững bước tương lai</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --blue: #1c7ed6;
+            --sky: #e7f4ff;
+            --orange: #ff8a1f;
+            --sun: #fff4d6;
+            --ink: #1f2d3d;
+            --mut: #5b6b7c;
+            --line: #e3edf6;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--ink);
+            font: 16px/1.7 "Be Vietnam Pro", "Segoe UI", Roboto, Arial, sans-serif
+        }
+
+        .w {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        nav {
+            position: sticky;
+            top: env(safe-area-inset-top, 0px);
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            z-index: 5
+        }
+
+        nav .w {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            height: 58px;
+            overflow-x: auto;
+            white-space: nowrap
+        }
+
+        nav b {
+            color: var(--blue);
+            font-size: 18px;
+            margin-right: auto
+        }
+
+        nav a {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--orange);
+            color: #fff;
+            padding: 13px 28px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 16px rgba(255, 138, 31, .3)
+        }
+
+        .btn.o {
+            background: #fff;
+            color: var(--blue);
+            box-shadow: none;
+            border: 2px solid var(--blue)
+        }
+
+        .hero {
+            background: linear-gradient(90deg, rgba(255, 255, 255, .92) 0%, rgba(255, 255, 255, .75) 50%, rgba(255, 255, 255, .1) 100%), url("banner.jpg") center/cover no-repeat;
+            padding: 72px 0 64px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            right: -80px;
+            top: -80px;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: rgba(28, 126, 214, .12)
+        }
+
+        .hero:after {
+            content: "";
+            position: absolute;
+            right: 120px;
+            bottom: -60px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(255, 138, 31, .16)
+        }
+
+        .hero .w {
+            position: relative;
+            z-index: 1
+        }
+
+        .pill {
+            display: inline-block;
+            background: #fff;
+            color: var(--blue);
+            border: 1px solid var(--line);
+            font-weight: 700;
+            font-size: 13px;
+            padding: 5px 14px;
+            border-radius: 999px
+        }
+
+        h1 {
+            font-size: clamp(32px, 6vw, 54px);
+            line-height: 1.15;
+            margin: 16px 0;
+            max-width: 680px
+        }
+
+        h1 span {
+            color: var(--blue)
+        }
+
+        .hero p {
+            max-width: 560px;
+            color: var(--mut);
+            font-size: 18px;
+            margin: 0 0 26px
+        }
+
+        .cta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .stats div {
+            padding: 24px 16px;
+            text-align: center;
+            border-right: 1px solid var(--line)
+        }
+
+        .stats div:last-child {
+            border: 0
+        }
+
+        .stats b {
+            display: block;
+            font-size: 34px;
+            color: var(--blue)
+        }
+
+        .stats span {
+            color: var(--mut);
+            font-size: 14px
+        }
+
+        section {
+            padding: 60px 0
+        }
+
+        h2 {
+            font-size: clamp(24px, 4vw, 34px);
+            margin: 0 0 8px;
+            text-align: center
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--mut);
+            max-width: 640px;
+            margin: 0 auto 32px
+        }
+
+        .g {
+            display: grid;
+            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+        }
+
+        .c {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 24px;
+            background: #fff
+        }
+
+        .c .n {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--orange);
+            line-height: 1
+        }
+
+        .c b {
+            display: block;
+            font-size: 18px;
+            margin: 10px 0 6px
+        }
+
+        .c p {
+            margin: 0;
+            color: var(--mut);
+            font-size: 15px
+        }
+
+        .sky {
+            background: var(--sky)
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center
+        }
+
+        .chips span {
+            background: #fff;
+            border: 1px solid #cfe5f8;
+            padding: 9px 18px;
+            border-radius: 999px;
+            font-weight: 600
+        }
+
+        .chips span.hl {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: #fff
+        }
+
+        .note {
+            text-align: center;
+            color: var(--mut);
+            font-size: 14px;
+            margin-top: 18px
+        }
+
+        .list {
+            max-width: 600px;
+            margin: 0 auto 28px;
+            padding: 0;
+            list-style: none
+        }
+
+        .list li {
+            padding: 14px 18px 14px 50px;
+            margin-bottom: 10px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            position: relative
+        }
+
+        .list li:before {
+            content: "";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            width: 14px;
+            height: 14px;
+            margin-top: -7px;
+            border-radius: 50%;
+            background: var(--orange)
+        }
+
+        .ct {
+            text-align: center
+        }
+
+        .sun {
+            background: var(--sun)
+        }
+
+        footer {
+            padding: 26px 0;
+            text-align: center;
+            font-size: 14px;
+            color: var(--mut);
+            border-top: 1px solid var(--line)
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="w"><b>VHU</b><a href="#vi-sao">Vì sao chọn VHU</a><a href="#nganh">Ngành học</a><a
+                href="#hoc-bong">Học bổng</a><a href="#phu-huynh">Dành cho phụ huynh</a></div>
+    </nav>
+
+    <div class="hero">
+        <div class="w">
+            <span class="pill">Tuyển sinh đại học chính quy 2026</span>
+            <h1>Chọn ngành đúng,<br><span>vững bước tương lai</span></h1>
+            <p>Trường Đại học Văn Hiến (VHU) đồng hành cùng học sinh và phụ huynh trên hành trình chọn ngành, chọn
+                trường và xây dựng nghề nghiệp.</p>
+            <div class="cta"><a class="btn" href="https://www.vhu.edu.vn/" target="_blank" rel="noopener">Khám phá VHU
+                    ngay</a><a class="btn o" href="#nganh">Xem ngành học</a></div>
+        </div>
+    </div>
+
+    <div class="stats w">
+        <div><b>1997</b><span>Năm thành lập</span></div>
+        <div><b>43</b><span>Ngành đào tạo</span></div>
+        <div><b>5</b><span>Phương thức xét tuyển</span></div>
+        <div><b>TP.HCM</b><span>Trường đại học tư thục</span></div>
+    </div>
+
+    <section id="vi-sao">
+        <div class="w">
+            <h2>Vì sao chọn Đại học Văn Hiến?</h2>
+            <p class="sub">Chọn trường là bước quan trọng trên hành trình xây dựng tương lai. Đây là những điều học sinh
+                và phụ huynh có thể tìm hiểu tại VHU.</p>
+            <div class="g">
+                <div class="c">
+                    <div class="n">01</div><b>Nhiều ngành để lựa chọn</b>
+                    <p>43 ngành học theo định hướng ứng dụng, đáp ứng nhu cầu phát triển kinh tế – xã hội và hội nhập
+                        quốc tế.</p>
+                </div>
+                <div class="c">
+                    <div class="n">02</div><b>Học đi đôi với thực hành</b>
+                    <p>Sinh viên được giới thiệu việc làm bán thời gian và thực tập tại cơ quan, doanh nghiệp.</p>
+                </div>
+                <div class="c">
+                    <div class="n">03</div><b>Xét tuyển linh hoạt</b>
+                    <p>Có thể xét điểm thi tốt nghiệp THPT, học bạ, đánh giá năng lực ĐHQG-HCM, xét kết hợp hoặc xét
+                        tuyển thẳng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nganh" class="sky">
+        <div class="w">
+            <h2>Khám phá ngành học – Mở lối tương lai</h2>
+            <p class="sub">Chưa biết chọn ngành nào? Hãy bắt đầu từ sở thích, khả năng và lĩnh vực bạn yêu thích.</p>
+            <div class="chips">
+                <span class="hl">Du lịch</span><span>Quản trị nhà hàng và dịch vụ ăn uống</span><span>Công nghệ thông
+                    tin</span><span>Truyền thông</span><span>Quản trị kinh doanh</span><span>Luật</span><span>Tâm lý
+                    học</span><span>Ngôn ngữ Anh</span><span>Piano</span>
+            </div>
+            <p class="note">Đây là một số ngành tiêu biểu. Xem đầy đủ 43 ngành tại tuyensinh.vhu.edu.vn.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="w">
+            <div class="g" style="align-items:center">
+                <div>
+                    <span class="pill" style="background:var(--sun);border-color:var(--sun);color:#b25e00">Ngành nổi
+                        bật</span>
+                    <h2 style="text-align:left;margin-top:12px">Du lịch: khám phá thế giới, trải nghiệm tương lai</h2>
+                    <p style="color:var(--mut)">Bạn thích đi đây đó, tìm hiểu văn hóa và giao tiếp với nhiều người?
+                        Ngành Du lịch giúp phát triển kỹ năng tổ chức, giao tiếp và phục vụ khách hàng, mở ra cơ hội
+                        trong lĩnh vực du lịch và dịch vụ.</p>
+                </div>
+                <div class="c" style="background:var(--sky);border-color:#cfe5f8">
+                    <b style="margin-top:0">Ngành này hợp với bạn nếu</b>
+                    <ul class="list" style="margin:8px 0 0">
+                        <li>Thích khám phá và trải nghiệm</li>
+                        <li>Năng động, thích gặp gỡ mọi người</li>
+                        <li>Quan tâm văn hóa và ngoại ngữ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hoc-bong" class="sun">
+        <div class="w">
+            <h2>Học bổng và hỗ trợ sinh viên</h2>
+            <p class="sub">VHU có nhiều chính sách học bổng, trong đó có học bổng khuyến học theo kết quả học tập hằng
+                năm và học bổng dành cho sinh viên tích cực hoạt động Đoàn – Hội, thiện nguyện. Mức học bổng và điều
+                kiện cụ thể xem trong thông báo chính thức của trường.</p>
+            <div class="ct"><a class="btn" href="https://tuyensinh.vhu.edu.vn/" target="_blank" rel="noopener">Xem chính
+                    sách tuyển sinh</a></div>
+        </div>
+    </section>
+
+    <section id="phu-huynh">
+        <div class="w ct">
+            <h2>Đồng hành cùng con – Vững bước tương lai</h2>
+            <p class="sub">Chọn trường là quyết định quan trọng của cả gia đình. Ba mẹ nên cùng con tìm hiểu:</p>
+            <ul class="list" style="text-align:left">
+                <li>Ngành học và chương trình đào tạo</li>
+                <li>Môi trường học tập và hoạt động sinh viên</li>
+                <li>Học phí và chính sách hỗ trợ</li>
+                <li>Cơ hội nghề nghiệp sau khi tốt nghiệp</li>
+            </ul>
+            <a class="btn" href="https://tuyensinh.vhu.edu.vn/" target="_blank" rel="noopener">Tìm hiểu tuyển sinh</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="w">Trường Đại học Văn Hiến (VHU) · Trung tâm Tư vấn tuyển sinh: 624 Âu Cơ, TP.HCM · Trang minh họa
+            cho bài thực hành marketing online</div>
+    </footer>
+</body>
+
+</html>
